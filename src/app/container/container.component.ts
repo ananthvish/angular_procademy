@@ -17,6 +17,8 @@ export class ContainerComponent {
     pImage: '/assets/images/iphone.png'
   }
 
+  searchedText: string;
+
   getDiscountedPrice() {
     return this.product.price - (this.product.price * this.product.discount / 100)
   }
@@ -38,5 +40,9 @@ export class ContainerComponent {
       this.addToCart++;
     }
 
+  }
+
+  searchTextChanged(value: string) {
+    this.searchedText = value;
   }
 }

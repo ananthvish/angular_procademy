@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Product } from './../../models/Product';
 
 @Component({
   selector: 'product-list',
@@ -7,22 +8,7 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
 
-  products: {
-    id: number;
-    name: string;
-    description: string;
-    brand: string;
-    gender: string;
-    category: string;
-    size: number[];
-    color: string[];
-    price: number;
-    discountPrice?: number;
-    is_in_inventory: boolean;
-    items_left: number;
-    imageURL: string;
-    slug: string;
-  }[] = [
+  products: Product[] = [
       {
         id: 1,
         name: "Nike React Infinity Run Flyknit",
@@ -549,7 +535,18 @@ export class ProductListComponent {
       }
     ];
 
+  selectedProduct;
+
   totalProductCount = this.products.length;
   inStockProductCount = this.products.filter(product => product.is_in_inventory).length;
   outOfStockProductCount = this.totalProductCount - this.inStockProductCount;
+
+  selectedFilter: String = 'all';
+
+  filterChanged(value: String) {
+    this.selectedFilter = value;
+  }
+
+  @Input()
+  searchedText: string;
 }
