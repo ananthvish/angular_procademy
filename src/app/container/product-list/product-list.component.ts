@@ -552,4 +552,10 @@ export class ProductListComponent {
   totalProductCount = this.products.length;
   inStockProductCount = this.products.filter(product => product.is_in_inventory).length;
   outOfStockProductCount = this.totalProductCount - this.inStockProductCount;
+
+  selectedFilter: String = 'all';
+
+  filterChanged(value: String) {
+    this.selectedFilter = value;
+  }
 }
