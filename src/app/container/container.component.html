@@ -10,8 +10,9 @@
     <button (click)="incrementCartValue()">+</button>
     <input (input)="onNameChange($event)"><br>
     <p>name={{name}}</p> -->
-    <app-search></app-search>
-    <product-list></product-list>
+    <app-search (searchTextEvent)="searchTextChanged($event)"></app-search>
+    <product-list [searchedText]="searchedText"></product-list>
+    <product-detail></product-detail>
     <!-- <div *ngFor="let item of [2,3,4,5,6]">{{ 'Current item is ' + item }}</div> -->
 </div>
 

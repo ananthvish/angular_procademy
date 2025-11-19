@@ -11,9 +11,9 @@
       <img [src]="productP.imageURL" class="ekart--product--image">
     </div>
     <div class="ekart--add--to--price">
-      {{productP.price}}
+      $ {{productP.price}}
     </div>
-    <div class="ekart--product--name">{{productP.price}}</div>
+    <div class="ekart--product--name">{{productP.name}}</div>
     <div class="ekart--product--category">{{productP.gender}} . {{productP.category}} . {{productP.brand}}</div>
     <div class="ekart--product--available-colors">{{productP.color.length}} Colors . Best Seller</div>
     <div class="ekart--product--in--stock" [ngStyle]="{fontWeight: 'bold',
