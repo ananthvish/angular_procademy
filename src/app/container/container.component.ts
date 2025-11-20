@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @Component({
   selector: 'app-container',
@@ -45,4 +46,7 @@ export class ContainerComponent {
   searchTextChanged(value: string) {
     this.searchedText = value;
   }
+
+  @ViewChild(ProductListComponent)
+  productListComponent: ProductListComponent;
 }
